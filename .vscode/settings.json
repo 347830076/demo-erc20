@@ -21,6 +21,6 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "window.commandCenter": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "workbench.editor.enablePreview": false
 }

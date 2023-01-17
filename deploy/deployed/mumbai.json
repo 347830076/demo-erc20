@@ -1,0 +1,14 @@
+{
+  "chain_name": "mumbai",
+  "chain_id": 80001,
+  "blacklist_token_demo": {
+    "address": "0xbeB00d8E791714e3Ed313Ee7DEd6CDa45F7E0009",
+    "block": 31055482,
+    "hash": "0xfee02313b3ee994e3fbb260e50ee6143b6221c6f05eb6f4486d0cd7e951692df"
+  },
+  "blacklist_token_factory": {
+    "address": "0x7Fd010eaE15d94462d7F0b5C4aa1229015788cf3",
+    "block": 31055489,
+    "hash": "0xd328609d9ad1921164111aa0edc33a8208832bade65be9a9be1dc308034c8211"
+  }
+}

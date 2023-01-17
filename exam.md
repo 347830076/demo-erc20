@@ -12,6 +12,32 @@
 评分标准：每个数据类型计 1 分  
 参考资料： https://docs.soliditylang.org/en/latest/types.html
 
+-   Solidity 支持以下类型：
+    -   值类型
+        -   整型：`int (8-256)`
+            -   有符号 `int`
+            -   无符号 `unint`
+        -   无符号整型: `uint (8-256)`
+        -   布尔型：`bool`
+        -   地址类型：`address`
+            -   `address`
+            -   `address payable`
+        -   定长字节数组：`bytes1 ~ bytes32`
+        -   定长浮点型
+            -   有符号 `fixed`
+            -   无符号 `ufixed`
+        -   有理数和整数字面常数
+        -   枚举类型：`enum`
+        -   函数：`Function`
+        -   事件: `Event`
+    -   引用类型
+        -   数据位置
+        -   数组类型：`Array` 数组可以是静态或动态
+        -   结构体类型：`Struts`
+        -   映射 `Mapping`
+        -   不定长字节数组 `bytes`
+        -   字符串类型：`string`
+
 ## 第 2 题：列举并测试以太坊的 JSONRPC API。
 
 评分标准：每条有效的（提供文本命令和测试截图） API 计 2 分，例如：
@@ -29,6 +55,18 @@ curl -s -X POST -H "Content-Type: application/json" https://matic-mumbai.chainst
 
 ---
 
+### 以太坊的 JSONRPC API
+
+解题思路：
+
+1. 用 hardhat 创建项目
+2. 用 npx hardhat node 开启本地网络
+3. 参考[官方文档](https://openethereum.github.io/JSONRPC-eth-module#eth_accounts)的 api，都有例子
+
+![举一个例子截图](./imgs//jsonrpc-api.png)
+
+太多了，就不一一截图了
+
 ## 第 3 题：同一个合约里代码相同的函数，为什么 GAS 费不同？
 
 请用 Remix 验证在同一个合约里，名称不同、代码相同的函数的 GAS 费不相等，并解释原因。
@@ -37,6 +75,19 @@ curl -s -X POST -H "Content-Type: application/json" https://matic-mumbai.chainst
 
 -   验证成功： 10 分，对过程要截图
 -   解释正确： 10 分
+
+### 原因
+
+-   函数的调用次数不同：在同一个合约里，如果某个函数被调用的次数更多，它所需要的 GAS 费用就会更高。
+-   函数内部执行的复杂度不同：如果某个函数内部执行的操作更复杂，它所需要的 GAS 费用就会更高。
+-   函数调用的时机不同：如果某个函数被调用的时机不同（例如在交易执行时或在智能合约执行时），它所需要的 GAS 费用也可能不同。
+-   所调用的合约是否存在前后缀，在合约上会产生不同的存储开销，引起 GAS 费用不同。
+-   当前区块的 Gas Price 也会对 GAS 费用产生影响
+-   确切的 GAS 费用需要在进行测算或者实际部署测试才能确定。
+
+### 实践图片
+
+![gas不同](./imgs/gas.png)
 
 ## 第 4 题：用 Remix 部署校验合约
 
@@ -78,7 +129,8 @@ curl -s -X POST -H "Content-Type: application/json" https://matic-mumbai.chainst
 -   部署成功： 10 分
 -   代码校验： 10 分
 -   手工测试： 10 分
--   
+-
+
 ### 5.4 对 BlacklistToken 合约进行自动化测试
 
 目前 BlacklistToken 还没有写测试用例，请在 test/BlacklistToken.test.js 文件里尽量补齐。可参考 https://hardhat.org/tutorial/testing-contracts 和网上其它开源项目的测试用例。
