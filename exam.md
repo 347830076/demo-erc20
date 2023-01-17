@@ -97,8 +97,11 @@ curl -s -X POST -H "Content-Type: application/json" https://matic-mumbai.chainst
 
 -   代码正确：截图 10 分
 -   部署成功：截图 10 分
+    ![remix 代码和部署成功截图](./imgs/getBlockTime.png)
 -   代码校验：截图 5 分
+    ![代码校验](./imgs/verify-code.png)
 -   获取结果：截图 5 分
+    ![获取结果](./imgs/verify-result.png)
 
 ## 第 5 题：黑名单 ERC20 合约
 
